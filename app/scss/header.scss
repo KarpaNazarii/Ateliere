@@ -1,0 +1,138 @@
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    // .header__nav
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    // .header__nav-logo
+    &__nav-logo {
+        padding-top: 25px;
+        padding-bottom: 27px;
+        font-size: 22px;
+        a{
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+    // .header__nav-item
+    &__nav-item {
+        text-decoration: none;
+        color: $grey;
+        padding-left: 40px;
+        padding-top: 29px;
+        padding-bottom: 28px;
+        transition: color 0.2s linear;
+        &:hover{
+            color: $yellow;
+        }
+    }
+    // .header__buy-bnt
+    &__buy-bnt {
+        padding-top:29px;
+        padding-bottom: 29px;
+        a{
+        text-decoration: none;
+        color: $yellow;
+        padding: 15px 25px;
+
+        border: none;
+        transition: border 2.0s linear;
+        &:hover{
+            border: 1px solid $yellow;
+        }
+        } 
+    }
+}
+
+.menu-btn{
+    display: none;
+}
+
+.menu{
+    display: none;
+}
+
+.menu-btn {
+    margin-top: 22px;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	z-index:2;
+	overflow: hidden;
+}
+.menu-btn span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: $yellow;
+	transition: all 0.5s;
+}
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+    background: #FFEFBA;
+	transform: translateX(-100%);
+	transition: transform 0.5s; 
+}
+.menu.active {
+	transform: translateX(0);
+}
+.menu li {
+	list-style-type: none;
+    text-align: center;
+    padding-top: 50px;
+    a{
+        color: $grey;
+        text-decoration: none;
+        padding: 10px;
+        &:hover{
+            color: $black;
+        }
+    }
+}
+
+.menu-btn.active span:nth-of-type(1) {
+    display: none;
+  }
+  .menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+  }
+  .menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+  }
+
+@media (min-width: 0px) and (max-width: 768px){
+    .header__nav-item{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    
+    .menu{
+        display: block;
+    }
+    .header {
+        justify-content: space-between;
+    }
+}
+

@@ -1,0 +1,26 @@
+@import "vars";
+
+/*Blocks*/
+@import "container";
+@import "header";
+@import "intro";
+@import "shop";
+@import "work";
+
+body{
+    margin: 0;
+    font-family: 'Old Standard TT', serif;
+    font-weight: 400;
+    background-color: $black;
+    background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
